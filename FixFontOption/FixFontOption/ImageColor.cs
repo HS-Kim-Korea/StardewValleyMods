@@ -98,7 +98,7 @@ namespace FixFontOption
             {
                 if (Debug)
                 {
-                    int key = $"{nameof(SpriteBatch_Draw_Prefix)}:{color}".GetHashCode();
+                    int key = HashCode.Combine(nameof(SpriteBatch_Draw_Prefix), color);
                     string value = $"{nameof(SpriteBatch_Draw_Prefix)}:{color}";
                     if (DebugBuffer != null && !DebugBuffer.ContainsKey(key))
                     {

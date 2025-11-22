@@ -1,5 +1,5 @@
 {
-  "Debug": false,
+  "Debug": true,
   "HideShadow": true,
   "EnableFixDialogueFontLineSpace": false,
   "DialogueFontLineSpace": 42,

@@ -100,7 +100,7 @@ namespace FixFontOption
             {
                 if (Debug && s != "")
                 {
-                    int key = $"{nameof(SpriteText_DrawString_Prefix)}:{color}:{s}".GetHashCode();
+                    int key = HashCode.Combine(nameof(SpriteText_DrawString_Prefix), color, s);
                     string value = $"{nameof(SpriteText_DrawString_Prefix)}:{color}:{s}";
                     if(DebugBuffer != null && !DebugBuffer.ContainsKey(key))
                     {
@@ -139,7 +139,7 @@ namespace FixFontOption
                 string strText = text.ToString();
                 if (Debug && strText != "")
                 {
-                    int key = $"{nameof(SpriteBatch_DrawString_Prefix)}:{strColor}:{strText}".GetHashCode();
+                    int key = HashCode.Combine(nameof(SpriteBatch_DrawString_Prefix), strColor, strText);
                     string value = $"{nameof(SpriteBatch_DrawString_Prefix)}:{strColor}:{strText}";
                     if (DebugBuffer != null && !DebugBuffer.ContainsKey(key))
                     {
@@ -178,7 +178,7 @@ namespace FixFontOption
                 string strText = text.ToString();
                 if (Debug && strText != "")
                 {
-                    int key = $"{nameof(SpriteBatch_DrawString_Prefix)}:{strColor}:{strText}".GetHashCode();
+                    int key = HashCode.Combine(nameof(SpriteBatch_DrawString_Prefix), strColor, strText);
                     string value = $"{nameof(SpriteBatch_DrawString_Prefix)}:{strColor}:{strText}";
                     if (DebugBuffer != null && !DebugBuffer.ContainsKey(key))
                     {
