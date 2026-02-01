@@ -13,6 +13,8 @@ namespace FixFontOption
         private static bool Debug = false;
         private static bool FontPixelZoomEnabled = false;
         private static float FontPixelZoomValue = 1f;
+        private static bool FontLineSpaceEnabled = false;
+        private static int FontLineSpaceValue = 49;
         private static bool NewCharacterMap = false;
         public BMFontOption(IModHelper? helper = null, IMonitor? monitor = null)
         {
@@ -46,6 +48,17 @@ namespace FixFontOption
                 FontPixelZoomValue = value.Value;
             }
         }
+        public void SetFontLineSpace(bool? enable, int? value)
+        {
+            if(enable.HasValue)
+            {
+                FontLineSpaceEnabled = enable.Value;
+            }
+            if(value.HasValue)
+            {
+                FontLineSpaceValue = value.Value;
+            }
+        }
         private static void Log(string message, LogLevel level = LogLevel.Trace)
         {
             Monitor?.Log(message, level);
@@ -68,9 +81,17 @@ namespace FixFontOption
         {
             try
             {
-                if(FontPixelZoomEnabled && NewCharacterMap && LocalizedContentManager.CurrentLanguageCode == LocalizedContentManager.LanguageCode.ko)
+                Log($"Flag : {SpriteText.FontFile.Common.LineHeight}", LogLevel.Debug);
+                if(NewCharacterMap && LocalizedContentManager.CurrentLanguageCode == LocalizedContentManager.LanguageCode.ko)
                 {
-                    SpriteText.fontPixelZoom = FontPixelZoomValue;
+                    if(FontPixelZoomEnabled)
+                    {
+                        SpriteText.fontPixelZoom = FontPixelZoomValue;
+                    }
+                    if(FontLineSpaceEnabled)
+                    {
+                        SpriteText.FontFile.Common.LineHeight = FontLineSpaceValue;
+                    }
                 }
                 NewCharacterMap = false;
             }
@@ -83,9 +104,17 @@ namespace FixFontOption
         {
             try
             {
-                if (FontPixelZoomEnabled && code == LocalizedContentManager.LanguageCode.ko)
+                Log($"Flag : {SpriteText.FontFile.Common.LineHeight}", LogLevel.Debug);
+                if (code == LocalizedContentManager.LanguageCode.ko)
                 {
-                    SpriteText.fontPixelZoom = FontPixelZoomValue;
+                    if(FontPixelZoomEnabled)
+                    {
+                        SpriteText.fontPixelZoom = FontPixelZoomValue;
+                    }
+                    if(FontLineSpaceEnabled)
+                    {
+                        SpriteText.FontFile.Common.LineHeight = FontLineSpaceValue;
+                    }
                 }
             }
             catch (Exception ex)

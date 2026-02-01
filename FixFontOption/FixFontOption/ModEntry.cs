@@ -33,6 +33,7 @@ namespace FixFontOption
             // Bitmap font options
             BMFontOption.SetDebug(Config.Debug);
             BMFontOption.SetFontPixelZoom(Config.EnableFixFontPixelZoom, Config.FontPixelZoom);
+            BMFontOption.SetFontLineSpace(Config.EnableBMFontLineSpace, Config.BMFontLineSpace);
             // sprite font options
             SpriteFontOption.SetDebug(Config.Debug);
             SpriteFontOption.SetHideShadow(Config.HideShadow);
