@@ -81,7 +81,6 @@ namespace FixFontOption
         {
             try
             {
-                Log($"Flag : {SpriteText.FontFile.Common.LineHeight}", LogLevel.Debug);
                 if(NewCharacterMap && LocalizedContentManager.CurrentLanguageCode == LocalizedContentManager.LanguageCode.ko)
                 {
                     if(FontPixelZoomEnabled)
@@ -104,7 +103,6 @@ namespace FixFontOption
         {
             try
             {
-                Log($"Flag : {SpriteText.FontFile.Common.LineHeight}", LogLevel.Debug);
                 if (code == LocalizedContentManager.LanguageCode.ko)
                 {
                     if(FontPixelZoomEnabled)

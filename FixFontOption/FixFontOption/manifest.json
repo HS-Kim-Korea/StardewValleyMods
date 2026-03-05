@@ -1,7 +1,7 @@
 {
   "Name": "FixFontOption",
   "Author": "HS-Kim-Korea",
-  "Version": "1.1.11",
+  "Version": "1.1.12",
   "Description": "Font options",
   "UniqueID": "HS-Kim-Korea.FixFontOption",
   "EntryDll": "FixFontOption.dll",
