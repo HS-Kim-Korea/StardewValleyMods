@@ -101,7 +101,7 @@ namespace FixFontOption
                 if (Debug && s != "")
                 {
                     int key = HashCode.Combine(nameof(SpriteText_DrawString_Prefix), color, s);
-                    string value = $"{nameof(SpriteText_DrawString_Prefix)}:{color}:{s}";
+                    string value = string.Concat(nameof(SpriteText_DrawString_Prefix), ":", color, ":", s);
                     if(DebugBuffer != null && !DebugBuffer.ContainsKey(key))
                     {
                         DebugBuffer.Add(key, value);
@@ -140,7 +140,7 @@ namespace FixFontOption
                 if (Debug && strText != "")
                 {
                     int key = HashCode.Combine(nameof(SpriteBatch_DrawString_Prefix), strColor, strText);
-                    string value = $"{nameof(SpriteBatch_DrawString_Prefix)}:{strColor}:{strText}";
+                    string value = string.Concat(nameof(SpriteBatch_DrawString_Prefix), ":", strColor, ":", strText);
                     if (DebugBuffer != null && !DebugBuffer.ContainsKey(key))
                     {
                         DebugBuffer.Add(key, value);
@@ -179,7 +179,7 @@ namespace FixFontOption
                 if (Debug && strText != "")
                 {
                     int key = HashCode.Combine(nameof(SpriteBatch_DrawString_Prefix), strColor, strText);
-                    string value = $"{nameof(SpriteBatch_DrawString_Prefix)}:{strColor}:{strText}";
+                    string value = string.Concat(nameof(SpriteBatch_DrawString_Prefix), ":", strColor, ":", strText);
                     if (DebugBuffer != null && !DebugBuffer.ContainsKey(key))
                     {
                         DebugBuffer.Add(key, value);
